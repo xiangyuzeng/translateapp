@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Translate_control</title>
+    <link rel="stylesheet" href="css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">Translate</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">控制台</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <table id="demo" lay-filter="test"></table>
+    </div>
+</div>
+<script src="layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('table', function(){
+        var table = layui.table;
+
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            ,height: 500
+            ,url: '/getAllRecords' //数据接口
+            ,page: true //开启分页
+            ,cols: [[ //表头
+                {field: 'app_id', title: 'APP_ID', width:266, sort: true, fixed: 'left'}
+                ,{field: 'from', title: 'FROM', width:301}
+                ,{field: 'to', title: 'TO', width:245, sort: true}
+                ,{field: 'dst', title: 'INPUT', width:311}
+                ,{field: 'src', title: 'RESULT', width: 367}
+                ,{field: 'date', title: 'DATE', width: 280, sort: true}
+            ]]
+        });
+
+    });
+</script>
+</body>
+</html>

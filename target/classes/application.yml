@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: "mongodb+srv://xiangyu:root123456@cluster0-3lto6.mongodb.net/test?retryWrites=true&w=majority"
